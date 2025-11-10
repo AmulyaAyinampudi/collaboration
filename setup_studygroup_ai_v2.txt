@@ -1,0 +1,2 @@
+Effective Collaboration & Study Group Formation System
+This is an agentic ai project which is most useful to the peers who are aspiring to connect to the world and study by forming into groups with others based on their interest.For instance if a student wants to learn a particular subject in a particular time then they can signup and login to the website and connect with the others who are having same academic interests and they can form as groups so that they can interact with each other and clarify their doubts also.This leads to academic growth of the peers.
