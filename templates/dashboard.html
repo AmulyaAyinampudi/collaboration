@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script>
+    function toggleForm() {
+      const formSection = document.getElementById("form-section");
+      formSection.classList.toggle("hidden");
+    }
+    function addCourse() {
+      const div = document.createElement("div");
+      div.classList.add("course");
+      div.innerHTML = `
+        <input name="course_name[]" placeholder="Course Name">
+        <input name="course_score[]" type="number" placeholder="Marks / CGPA">
+      `;
+      document.getElementById("courses-section").appendChild(div);
+    }
+  </script>
+</head>
+<body>
+  <div class="form-container">
+    <div class="logout-wrapper">
+  <form action="/logout" method="get">
+    <button class="logout-btn" type="submit">Logout</button>
+  </form>
+</div>
+
+
+
+
+    <h2>Welcome, {{ name }}</h2>
+
+    {% if summary %}
+    <h3>Your Recommended Study Matches</h3>
+    <p style="text-align:left; white-space:pre-line;">{{ summary }}</p>
+    {% else %}
+    <p>No study recommendations yet. Add your details below.</p>
+    {% endif %}
+
+    <button class="toggle-btn" type="button" onclick="toggleForm()">Add / Update My Courses</button>
+
+    <div id="form-section" class="hidden">
+      <form method="POST">
+        <h3>Enter your course details:</h3>
+        <div id="courses-section">
+          <div class="course">
+            <input name="course_name[]" placeholder="Course Name (e.g., AI)">
+            <input name="course_score[]" type="number" placeholder="Marks / CGPA">
+          </div>
+        </div>
+        <button type="button" onclick="addCourse()">+ Add Another Course</button>
+
+        <h3>Select preferred study timings:</h3>
+        <select name="preferred_time">
+          <option value="Morning">Morning</option>
+          <option value="Evening">Evening</option>
+          <option value="Weekend">Weekend</option>
+        </select>
+
+        <button type="submit">Save Details</button>
+        <p>{{ msg }}</p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

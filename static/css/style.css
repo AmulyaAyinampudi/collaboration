@@ -1,0 +1,120 @@
+/* === Modern, clean dashboard theme === */
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1e293b;
+}
+
+.form-container {
+  position: relative;
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 18px;
+  width: 460px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: #1e3a8a;
+  font-weight: 700;
+}
+
+h3 {
+  color: #334155;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* 🔹 Logout button styling fix */
+.logout-wrapper {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.logout-btn {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  width: auto !important; /* override generic button width */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-in-out;
+}
+
+.logout-btn:hover {
+  background-color: #dc2626;
+  transform: scale(1.05);
+}
+
+
+input,
+button,
+select {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+button {
+  background-color: #3b82f6;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+.toggle-btn {
+  background-color: #0284c7;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.toggle-btn:hover {
+  background-color: #0369a1;
+}
+
+a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.error {
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Subtle shadow and animation */
+.form-container {
+  animation: fadeIn 0.8s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
