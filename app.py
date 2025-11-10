@@ -6,6 +6,10 @@ from agents import summarize_matches
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
 
+from database import initialize_database
+initialize_database()
+
+
 @app.route('/')
 def home():
     if 'user' in session:
